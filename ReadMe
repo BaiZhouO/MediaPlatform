@@ -1,0 +1,12 @@
+项目的架构采用SSM整合的结构：
+
+视图层放到了webapp下的web-inf的views，用jsp写页面，页面跳转关系属于业务层范畴
+业务层在项目包下的controller用于处理逻辑事务，调用service服务层
+模型层在model，目前放了一个表（UserInfo）的model，以后会考虑实体类的存放位置
+数据库层在dao下
+
+值得注意的是
+1.若拉取分支到本机，请更改jdbc.properties里的数据库驱动配置
+2.如需操作（增删查改）库下对应表，请写对应的dao类，并放在dao包内，以便于mybatis操作；并在mapper下写映射配置文件
+3.如需添加新表，请在model下写对应的bean对象
+4.如需实现新的业务，请确保对应的service和controller写好
