@@ -10,6 +10,7 @@
     <delete id="deleteUser" parameterType="int">
         DELETE FROM USERINFO WHERE ID=#{id}
     </delete>
+
     <update id="updateUser" parameterType="UserInfo">
         UPDATE USERINFO
         <set>

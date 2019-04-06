@@ -1,0 +1,10 @@
+
+操作数据库流程：
+1.调用getInstance获得一个dao对象，比如想操作user表就调用UserDao.getInstance()获得一个UserDao对象
+2.根据想要的操作选择函数调用，比如想插入一个User就调用userDao.insertUser(user)
+3.当调用方法后操作并不立即指向，只有调用dao.commit后才会提交到数据库
+4.用完dao之后记得close()
+
+注意：调用返回单个对象的selectById时当id不存在时返回null，当调用返回一个List的select方法时若不存在返回空List
+
+main中有具体实例

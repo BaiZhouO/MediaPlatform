@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为UserDao接口方法提供sql语句配置 -->
+<mapper namespace="User">
+    <insert id="insertUser" parameterType="com.AnalyzeSystem.model.User">
+        INSERT INTO user (userId,userName,password,sequenceId)VALUES(
+        #{userId},#{userName},#{password},#{sequenceId})
+    </insert>
+
+    <delete id="deleteUser" parameterType="java.lang.String">
+        DELETE FROM user WHERE userId=#{id}
+    </delete>
+
+    <update id="updateName">
+        UPDATE user
+        <set>
+            <if test="newName!=null and newName!='' ">userName =#{newName},</if>
+        </set>
+        where userId=#{id}
+    </update>
+
+    <update id="changePassword">
+        UPDATE user
+        <set>
+            <if test="newPassword!=null and newPassword!='' ">PASSWORD =#{newPassword},</if>
+        </set>
+        where userId=#{id}
+    </update>
+
+<select id="selectUserById" resultType="User" parameterType="java.lang.String">
+        SELECT * FROM user WHERE userId = #{id}
+    </select>
+
+    <select id="selectUserByName" parameterType="java.lang.String" resultType="User">
+        SELECT * FROM user WHERE userName=#{name}
+    </select>
+
+
+</mapper>

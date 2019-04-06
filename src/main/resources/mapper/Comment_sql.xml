@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Comment">
+    <insert id="insertComment" parameterType="com.AnalyzeSystem.model.Comment">
+        insert into comment (commentId,userId,messageId,time)
+        value (#{commentId},#{userId},#{messageId},#{time})
+    </insert>
+
+    <select id="selectCommentByCommentId" resultType="Comment">
+        select * from comment where commentId=#{commentId};
+    </select>
+
+    <select id="selectCommentByUserId" resultType="Comment">
+        select * from comment where userId=#{userId}
+    </select>
+
+    <select id="selectCommentByMessageId" resultType="Comment">
+        select * from comment where messageId=#{messageId}
+    </select>
+
+    <delete id="deleteCommentById">
+        delete from comment where commentId=#{commentId}
+    </delete>
+
+</mapper>
