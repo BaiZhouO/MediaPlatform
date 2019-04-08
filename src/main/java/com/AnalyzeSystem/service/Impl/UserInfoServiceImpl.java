@@ -52,5 +52,8 @@ public class UserInfoServiceImpl implements UserInfoService
         return userInfoDao.selectUserCount();
     }
 
+    public int getLastestUserId(){
+        return userInfoDao.getLastestUserId();
+    }
 
 }

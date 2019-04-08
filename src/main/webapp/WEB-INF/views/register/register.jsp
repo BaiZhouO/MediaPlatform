@@ -3,15 +3,20 @@
 <html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../../../css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+<link href="../../../css/signin.css" rel="stylesheet">
+<link href="../../../css/style1.css" rel="stylesheet">
+<script src="../../../js/jquery-1.7.1.min.js"></script>
+<script src="../../../js/ui.js"></script>
+<script type="text/javascript">baselocation="${ctx}"</script>
 
 <title>欢迎注册媒体管理平台</title>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="../../../js/bootstrap.min.js"></script>
+    <%--<link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <script src="../../../js/jquery-1.7.1.min.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>--%>
     <title>欢迎注册媒体管理平台</title>
 </head>
 <body>
@@ -37,7 +42,7 @@
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-user"></span>
                         </span>
-                    <input id="registerName" name="identity" class="form-control" placeholder="请输入用户名" maxlength="20" type="text" required="" oninput="checkId();">
+                    <input id="registerName" name="identity" class="form-control" placeholder="请输入用户名" maxlength="20" type="text" required="" >
                 </div>
                 <span id="id-message" style="color: red; font-size: small;"></span>
 
@@ -49,7 +54,7 @@
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-lock"></span>
                         </span>
-                    <input id="registerPassword" class="form-control" name="password" placeholder="请输入密码" maxlength="20" type="password" required="" oninput="checkPassword();">
+                    <input id="registerPassword" class="form-control" name="password" placeholder="请输入密码" maxlength="20" type="password" required="">
                 </div>
                 <span id="password-message" style="color: red; font-size: small;"></span>
             </div>
@@ -60,18 +65,18 @@
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-lock"></span>
                         </span>
-                    <input id="passwordConfirm" class="form-control" name="chkpassword" placeholder="请再次输入密码" maxlength="20" type="password" required="" oninput="checkPasswordRepeat();">
+                    <input id="passwordConfirm" class="form-control" name="chkpassword" placeholder="请再次输入密码" maxlength="20" type="password" required="">
                 </div>
                 <span id="repassword-message" style="color: red; font-size: small;"></span>
             </div>
 
             <div class="form-group has-feedback">
-                <label for="shop_address">所属部门*</label>
+                <label for="departmentName">所属部门*</label>
                 <div class="input-group">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-user"></span>
                         </span>
-                    <input id="shopName" class="form-control" name="shopname" placeholder="请输入部门" maxlength="45" type="text" required="">
+                    <input id="departmentName" class="form-control"  placeholder="请输入部门" maxlength="45" type="text">
                 </div>
                 <span id="name-message" style="color: red; font-size: small;"></span>
             </div>
@@ -79,35 +84,33 @@
 
 
             <div class="form-group has-feedback">
-                <label for="shop_address">学号*</label>
+                <label for="studentNumber">学号*</label>
                 <div class="input-group">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-user"></span>
                         </span>
-                    <input id="shop_address" class="form-control" name="address" placeholder="请输入学号" maxlength="45" type="text" required="">
+                    <input id="studentNumber" class="form-control" name="studentNumber" placeholder="请输入学号" maxlength="45" type="text" required="">
                 </div>
             </div>
 
             <div class="form-group has-feedback">
-                <label for="shop_phone">联系方式*</label>
+                <label for="phoneNumber">联系方式*</label>
                 <div class="input-group">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-phone"></span>
                         </span>
-                    <input id="shop_phone" class="form-control" name="phone" placeholder="请输入手机号码" maxlength="11" type="text" required="" oninput ="checkPhone();"
-                           onkeypress="keyPress();"
-                           onkeyup="if(event.keyCode !=37 && event.keyCode != 39)value=value.replace(/\D/g,'')">
+                    <input id="phoneNumber" class="form-control" name="phone" placeholder="请输入手机号码" maxlength="11" type="text" required="">
                 </div>
                 <span id="phone-message" style="color: red; font-size: small;"></span>
             </div>
 
             <div class="form-group has-feedback">
-                <label for="shop_manager">入学年份*</label>
+                <label for="startYear">入学年份*</label>
                 <div class="input-group">
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-user"></span>
                         </span>
-                    <input id="shop_manager" class="form-control" name="manager" placeholder="请输入入学年份" maxlength="45" type="text" required="" oninput="checkManager();">
+                    <input id="startYear" class="form-control" name="manager" placeholder="请输入入学年份" maxlength="45" type="text" required="" >
                 </div>
                 <span id="manager-message" style="color: red; font-size: small;"></span>
             </div>
@@ -132,6 +135,11 @@
                 <input value="重置" id="reset" class="form-control btn btn-danger" type="reset">
             </div>
 
+            <br><br>
+
+            <div class="form-group">
+                <input class="form-control btn btn-primary" id="btn_gotoLogin"  value="去&nbsp;&nbsp;登&nbsp;&nbsp;录" type="submit">
+            </div>
         </form>
     </div>
 </div>

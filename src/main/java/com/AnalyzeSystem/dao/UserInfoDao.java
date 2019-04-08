@@ -2,6 +2,7 @@ package com.AnalyzeSystem.dao;
 
 
 import com.AnalyzeSystem.model.UserInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface UserInfoDao {
      * 添加用户信息
      * @param userInfo
      */
-    void insertUser(UserInfo userInfo);
+    void insertUser(@Param("userinfo")UserInfo userInfo);
 
     /**
      * 删除用户
@@ -22,7 +23,7 @@ public interface UserInfoDao {
      * 修改用户信息
      * @param userInfo
      */
-    void updateUser(UserInfo userInfo);
+    void updateUser(@Param("userinfo")UserInfo userInfo);
 
     /**
      * 根据ID获取用户信息
@@ -49,12 +50,18 @@ public interface UserInfoDao {
      * @param userInfo
      * @return
      */
-    List<UserInfo> selectUserByParams(UserInfo userInfo);
+    List<UserInfo> selectUserByParams(@Param("userinfo")UserInfo userInfo);
 
     /**
      * 获取所有用户数量
      * @return
      */
     int selectUserCount();
+
+    /**
+     * 获取最新的id
+     * @return
+     */
+    int getLastestUserId();
 
 }

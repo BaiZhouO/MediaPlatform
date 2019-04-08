@@ -4,7 +4,7 @@
 <!-- 设置为UserDao接口方法提供sql语句配置 -->
 <mapper namespace="com.AnalyzeSystem.dao.UserInfoDao">
     <insert id="insertUser" parameterType="UserInfo">
-        INSERT INTO USERINFO(NAME,PASSWORD)VALUES(#{name},#{password})
+        INSERT INTO USERINFO(ID,NAME,PASSWORD,departmentName,studentNumber,phoneNumber,startYear,description,registerTime)VALUES(#{userinfo.id},#{userinfo.name},#{userinfo.password},#{userinfo.departmentName},#{userinfo.studentNumber},#{userinfo.phoneNumebr},#{userinfo.startYear},#{userinfo.description},#{userinfo.registerTime})
     </insert>
 
     <delete id="deleteUser" parameterType="int">
@@ -41,5 +41,9 @@
 
     <select id="selectUserCount" resultType="int">
         select count(*) from USERINFO
+    </select>
+
+    <select id="getLastestUserId" resultType="int">
+        select max(id) FROM USERINFO
     </select>
 </mapper>

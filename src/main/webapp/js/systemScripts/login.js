@@ -34,7 +34,7 @@ $(function(){
                     }
                     else
                     {
-                        alert('error: the status of web is '+data.code+', debug it!');
+                        alert('error: the status of web is '+data.code+', debug it!');//查看webResult的code
                     }
                 }
 
@@ -43,3 +43,9 @@ $(function(){
     });
     }
 );
+
+$(function() {
+    $('#btn_gotoRegister').click(function() {
+        window.location.href = baselocation + "/registerPage";
+    })
+});

@@ -46,11 +46,11 @@
 
         <button id="btn_login" class="btn btn-lg btn-primary btn-block" type="button" value="登录">登录</button>
 
-        <span class="signup">还没有账户，
+        <h3>还没有账户？？？</h3>>
+        <br>
+        <button id="btn_gotoRegister" class="btn btn-lg btn-primary btn-block" type="button" value="登录">去注册</button>
 
-          <a href ="register" type="submit" name="submit" class="reg_btn">立即注册</a>
 
-      </span>
     </form>
 
 

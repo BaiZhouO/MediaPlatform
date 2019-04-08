@@ -56,4 +56,10 @@ public interface UserInfoService {
      */
     int selectUserCount();
 
+    /**
+     * 获取最新的用户id
+     * @return
+     */
+    int getLastestUserId();
+
 }
