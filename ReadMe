@@ -10,3 +10,16 @@
 2.如需操作（增删查改）库下对应表，请写对应的dao类，并放在dao包内，以便于mybatis操作；并在mapper下写映射配置文件
 3.如需添加新表，请在model下写对应的bean对象
 4.如需实现新的业务，请确保对应的service和controller写好
+
+
+
+***
+final framework:
+重写了userinfo相关的类
+1.model下的userinfo: 为适应注册信息添加了诸列，完成userinfo表的最终版本
+2.dao下的userinfoDao: 加入了一个新的方法：getLastestID,用于返回最新的id（注册要用）；同时引入ibatis的param注解：若SQL语句需要操作userinfo对象，则需要在dao内引入param注解（请看源码）
+3.userinfo_sql.xml：重写了insert语句以适应新表，这里用到了上条提示的注解
+4.相关的service添加新方法
+
+实现了login-register-homepage间相互跳转
+1.相关controller、jsp、js
