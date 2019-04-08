@@ -13,7 +13,9 @@
 
 
 
-***
+*****
+//我透分割线不是三个***吗？？怎么没求用
+
 final framework:
 重写了userinfo相关的类
 1.model下的userinfo: 为适应注册信息添加了诸列，完成userinfo表的最终版本
