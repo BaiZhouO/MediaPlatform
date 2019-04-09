@@ -41,7 +41,7 @@ $(function () {
 
         function checkPhone() {
             //只输入数字
-            var number = /^1[3|4|5|8][0-9]\d{4,8}$/;
+            var number = /^1[3|4|5|7|8][0-9]\d{4,8}$/;
             var phone = $("#phoneNumber").val();
             var ret = number.test(phone);
             if (phone == "") {
