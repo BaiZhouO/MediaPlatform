@@ -1,4 +1,8 @@
-项目的架构采用SSM整合的结构： H2
+basicFrame介绍：
+===============
+
+项目的架构采用SSM整合的结构：
+---------------------------
 
 视图层放到了webapp下的web-inf的views，用jsp写页面，页面跳转关系属于业务层范畴
 业务层在项目包下的controller用于处理逻辑事务，调用service服务层
@@ -14,9 +18,10 @@
 
 
 *****
-//我透分割线不是三个***吗？？怎么没求用
 
-final framework: H2
+v1.0
+------
+
 重写了userinfo相关的类 H4
 1.model下的userinfo: 为适应注册信息添加了诸列，完成userinfo表的最终版本
 2.dao下的userinfoDao: 加入了一个新的方法：getLastestID,用于返回最新的id（注册要用）；同时引入ibatis的param注解：若SQL语句需要操作userinfo对象，则需要在dao内引入param注解（请看源码）
@@ -28,3 +33,14 @@ final framework: H2
 
 实现了远程数据库的操作 H4
 1.注意：accesslistservice的impl文件有问题，目前没排查出来（根本就没花时间排查，hyk这比直接粗暴注释了），具体问题是：若不注释的话，页面的css/js等资源文件无法访问，我也搞不懂为啥一个没有调用到的service会影响这个
+
+********
+
+v2.0
+-----
+
+todolist:
+1.logincontroller向session中写入user，homepage以及其他controller从中读取user获取具体用户信息
+2.其余各个controller的实现逻辑
+
+
